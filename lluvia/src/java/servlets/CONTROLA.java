@@ -18,7 +18,9 @@ import javax.servlet.RequestDispatcher;
  * @author Eduardo
  */
 public class CONTROLA extends HttpServlet {
-
+    String  listar = "vistas/listar.jsp";
+    String add = "vistas/add.jsp";
+    String edit = "vistas/edit.jsp";
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -65,7 +67,13 @@ public class CONTROLA extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+         String acceso = "";
+        String action = request.getParameter("accion");
+           if(action.equalsIgnoreCase("listar")){
+              acceso = listar;
+           }
+       RequestDispatcher vista = request.getRequestDispatcher(acceso);
+        vista.forward(request, response);
     }
 
     /**

@@ -39,7 +39,7 @@
 
                     <div class="input-group">
                         <input type="submit" class="form-input" name="btniniciar" value="Iniciar Sesión">
-                        <!--<p>No tienes cuenta? <a href="Registro/Registrar.jsp" class="alt-form">Ingresa aquí</a></p>-->
+                        <a  href="CONTROLA?accion=listar">Listar Persona</a>
                     </div>
 
                 </form>
