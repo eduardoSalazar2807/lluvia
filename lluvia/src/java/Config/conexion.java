@@ -5,18 +5,42 @@
  */
 package Config;
 
+import com.mysql.jdbc.Connection;
+import java.sql.DriverManager;
+
 /**
  *
  * @author Eduardo
  */
-public class conexion {
+public class Conexion {
     
+       Connection conexion;
+    
+    public Conexion(){
+        try {
+           Class.forName("com.mysql.jdbc.Driver");
+           conexion = (Connection) DriverManager.getConnection("jdbc:mysql://localhost/backoffice","root","");
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+    
+    public Connection getConexion(){
+        return conexion;
+    } 
+   
+    
+    
+    
+    
+    
+/*    
     String url;
     String user;
     String contra;
     String driver;
 
-    public conexion() {
+    public Conexion() {
         this.url = "jdbc:mysql://localhost:3306/backoffice";
         this.user = "root";
         this.contra = "";
@@ -39,7 +63,5 @@ public class conexion {
         return driver;
     }
     
-    
-    
-    
+  */    
 }

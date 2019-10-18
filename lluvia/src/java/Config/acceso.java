@@ -6,6 +6,7 @@
 package Config;
 
 import java.sql.*;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -13,7 +14,7 @@ import java.sql.*;
  */
 public class acceso {
     
-    conexion db = new conexion();
+    Conexion db = new Conexion();
     String sql="";
     Connection con;
     PreparedStatement ps;
@@ -24,25 +25,25 @@ public class acceso {
     
     
     public int validar(String usuario , String contraseña){
-        
+      
         int nivel=0;
         
         try {
-            Class.forName(db.getDriver());
-            con=DriverManager.getConnection(db.getUrl(),db.getUser(),db.getContra());
+            con= db.getConexion();
             sql="SELECT nivel FROM cuenta WHERE Rut='"+usuario+"' AND contraseña='"+contraseña+"'";
             ps=con.prepareStatement(sql);
             rs=ps.executeQuery();
             
             while (rs.next()) {
-                nivel=rs.getInt(1);   
+                nivel=rs.getInt(1);
             }
             con.close();
             rs.close();
             return nivel;
-        } catch (SQLException | ClassNotFoundException e) {
+        } catch (SQLException e) {
             return nivel;
             
         }
     }
+
 }
