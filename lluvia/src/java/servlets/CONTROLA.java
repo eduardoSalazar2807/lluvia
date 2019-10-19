@@ -12,6 +12,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import Config.acceso;
+import Modelo.Persona;
+import ModeloDAO.PersonaDAO;
 import javax.servlet.RequestDispatcher;
 /**
  *
@@ -21,6 +23,8 @@ public class CONTROLA extends HttpServlet {
     String  listar = "vistas/listar.jsp";
     String add = "vistas/add.jsp";
     String edit = "vistas/edit.jsp";
+    Persona p=new Persona();
+    PersonaDAO dao=new PersonaDAO();
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -67,12 +71,58 @@ public class CONTROLA extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-         String acceso = "";
+        String acceso = "";
         String action = request.getParameter("accion");
-           if(action.equalsIgnoreCase("listar")){
-              acceso = listar;
-           }
-       RequestDispatcher vista = request.getRequestDispatcher(acceso);
+        if (action.equalsIgnoreCase("listar")) {
+            acceso = listar;
+        } else if (action.equalsIgnoreCase("add")) {
+            acceso = add;
+
+        } else if (action.equalsIgnoreCase("Agregar")) {
+            //int  id=Integer.parseInt(request.getParameter("txtId"));  
+            String rut = request.getParameter("txtRut");
+            String nom = request.getParameter("txtNombre");
+            String apellido = request.getParameter("txtApellido");
+            String email = request.getParameter("txtEmail");
+            String codigo = request.getParameter("txtCodEmpleado");
+            int codigo1 = Integer.parseInt(codigo);
+            p.setRut(rut);
+            p.setNom(nom);
+            p.setApellido(apellido);
+            p.setEmail(email);
+            p.setId_empleado(codigo1);
+            dao.add(p);
+            acceso = listar;
+        } else if (action.equalsIgnoreCase("editar")) {
+            request.setAttribute("rutper", request.getParameter("rut"));
+            acceso = edit;
+
+        } else if (action.equalsIgnoreCase("Actualizar")) {
+            // int  id=Integer.parseInt(request.getParameter("txtid"));  
+            String rut = request.getParameter("txtRut");
+            String nom = request.getParameter("txtNombre");
+            String apellido = request.getParameter("txtApellido");
+            String email = request.getParameter("txtEmail");
+            String codigo = request.getParameter("txtCodEmpleado");
+            int codigo1 = Integer.parseInt(codigo);
+            p.setRut(rut);
+            p.setNom(nom);
+            p.setApellido(apellido);
+            p.setEmail(email);
+            p.setId_empleado(codigo1);
+            dao.edit(p);
+            acceso = listar;
+        }else if(action.equalsIgnoreCase("eliminar")){
+            String rut = request.getParameter("rut");
+            p.setRut(rut);
+            dao.eliminar(rut);
+             acceso=listar;
+                     
+                     
+        }
+
+  
+         RequestDispatcher vista = request.getRequestDispatcher(acceso);
         vista.forward(request, response);
     }
 

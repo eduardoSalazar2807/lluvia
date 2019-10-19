@@ -17,7 +17,7 @@
     </head>
     <body>
         <h1>Personas</h1>
-        <a href="Controlador?accion=add"> Agregar Nuevo</a>
+        <a href="CONTROLA?accion=add"> Agregar Nuevo</a>
         <table border="1">
             <thead>
                 <tr>
@@ -44,8 +44,8 @@
                     <td><%= per.getId_empleado()%></td>
 
                     <th>
-                        <a href="Controlador?accion=editar&rut=<%= per.getRut()%>">Editar</a>
-                        <a href="Controlador?accion=eliminar&rut=<%= per.getRut()%>">Eliminar</a>
+                        <a href="CONTROLA?accion=editar&rut=<%= per.getRut()%>">Editar</a>
+                        <a href="CONTROLA?accion=eliminar&rut=<%= per.getRut()%>">Eliminar</a>
 
                         <a href="Controlador?accion=AcignarDepar&rut=<%= per.getRut()%>">Departamento </a>
 

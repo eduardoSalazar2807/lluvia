@@ -55,23 +55,63 @@ public class PersonaDAO implements CRUD{
 
     @Override
     public Persona list(String rut) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+       String sql="Select * from personas where Rut="+rut;
+        
+        try {
+            con = cn.getConexion();
+            ps = con.prepareStatement(sql);
+            rs = ps.executeQuery();
+            
+            while(rs.next()){
+                
+                p.setRut(rs.getString("Rut"));
+                p.setNom(rs.getString("nombre"));
+                p.setApellido(rs.getString("apellido"));
+                p.setEmail(rs.getString("email"));
+                p.setId_empleado(rs.getInt("Id_empleado"));
+                            
+            } 
+            
+        } catch (Exception e) {
+           
+        }
+        return p;
+           }
 
     @Override
     public boolean add(Persona per) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            String sql="insert into personas(Rut,nombre,apellido,email,Id_empleado) values ('"+per.getRut()+"','"+per.getNom()+"','"+per.getApellido()+"','"+per.getEmail()+"','"+per.getId_empleado()+"')";
+     try  {
+           con= cn.getConexion();
+           ps = con.prepareStatement(sql);
+           ps.executeUpdate();
+     }catch (Exception e){
+     }
+     return false; 
     }
 
     @Override
     public boolean edit(Persona per) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+     String sql="update personas set nombre='"+per.getNom()+"',apellido='"+per.getApellido()+"',email='"+per.getEmail()+"',Id_empleado='"+per.getId_empleado()+"' where Rut="+per.getRut();
+     try  { 
+           con = cn.getConexion();
+           ps = con.prepareStatement(sql);
+            ps.executeUpdate();
+     }catch (Exception e){
+     } 
+        return false;   
     }
 
     @Override
     public boolean eliminar(String rut) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+       String sql="delete from personas where Rut="+rut;
+    try  {
+           con = cn.getConexion();
+           ps = con.prepareStatement(sql);
+            ps.executeUpdate();
+     }catch (Exception e){
+     } 
+        return false; }
     
     
 }
