@@ -36,9 +36,14 @@ HttpSession sesion = request.getSession();
             Benvenido Usuario@ <%= sesion.getAttribute("nombre") %> | 
             
             <a href="../index.jsp?cerrar=true">Cerrar Sesion</a>
+           
             
             <hr>
         </div>
+            
+            <div>
+                <a  href="http://localhost:8084/lluvia//CONTROLA?accion=listar">Listar Persona</a>
+            </div>
         <h1>Entro como administrador</h1>
     </body>
 </html>

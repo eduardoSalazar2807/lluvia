@@ -39,7 +39,6 @@
 
                     <div class="input-group">
                         <input type="submit" class="form-input" name="btniniciar" value="Iniciar Sesión">
-                        <a  href="CONTROLA?accion=listar">Listar Persona</a>
                     </div>
 
                 </form>
