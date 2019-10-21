@@ -28,12 +28,13 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="../css/Estilosadmin.css">
-        <title>JSP Page</title>
+        <title>Principal</title>
     </head>
     <body>
+                    Benvenido Usuario@ <%= sesion.getAttribute("nombre") %> 
         <div id="menu">
             <ul>
-                <li><a href="#">Crear Empleados</a></li>
+                <li> <a href="http://localhost:8084/lluvia//CONTROLA?accion=add"> Agregar Empleado</a></li>
                 <li> <a  href="http://localhost:8084/lluvia//CONTROLA?accion=listar">Listar Persona</a></li>
                 <li class="item-r"><a href="../index.jsp?cerrar=true">Cerrar Sesion</a></li>
             </ul>
