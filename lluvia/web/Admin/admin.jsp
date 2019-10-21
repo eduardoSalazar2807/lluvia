@@ -35,7 +35,7 @@ HttpSession sesion = request.getSession();
                 <ul>
                     <li><a href="#">Crear Empleados</a></li>
                     <li><a href="#">Lista de Empleados</a></li>
-                    <li class="item-r"><a href="#">Contratos</a></li>
+                    <li class="item-r"><a href="../index.jsp?cerrar=true">Cerrar Sesion</a></li>
                 </ul>
                 </div>       
     </body>
