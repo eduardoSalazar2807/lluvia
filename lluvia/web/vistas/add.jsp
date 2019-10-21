@@ -12,6 +12,7 @@
         <title>JSP Page</title>
     </head>
     <body>
+    <center>
         <h1>Agregar Person</h1>
           <form action= "CONTROLA">
             Rut:<br>
@@ -26,12 +27,8 @@
                   <input type="text" name="txtCodEmpleado"><br>
                   
                    <input  type="submit" name="accion" value="Agregar"><br>
-                   
-                 
-           
-         
+
         </form>
+        </center>
     </body>
-  
-    
 </html>

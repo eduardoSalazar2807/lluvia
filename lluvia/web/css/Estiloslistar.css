@@ -1,0 +1,49 @@
+body{
+    background-color: #164585;
+}
+#tabla_datos{
+    border-collapse: collapse;
+    border: 2px solid black;
+    width: 60%;
+    margin-top: 15px;
+}
+#thead_bor{
+    border: 2px solid black;
+}
+tr{
+    border-bottom: 2px solid #000;
+    background-color: #fff;
+}
+th{
+    background-color: #039BE5;;
+}
+.boton{
+    border-top: 100px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    border-radius: 8px;
+    padding: 1px 1px;
+    text-decoration: none;
+    background-color: #49C52D;
+    width: 100px;
+    height: 30px;
+    display: inline-block;
+}
+.boton:hover{
+    background-color: #164585;
+    color: white;
+}
+.boton:active{
+    background-color: #164585;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+b{
+ color: #fff;  
+ font-size: larger;
+}
+@font-face {
+  font-family: "San Francisco";
+  color: black color;
+  font-weight: 400;
+  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
+ }
