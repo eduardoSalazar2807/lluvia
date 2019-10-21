@@ -27,23 +27,16 @@ HttpSession sesion = request.getSession();
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="../css/Estilosadmin.css">
         <title>JSP Page</title>
     </head>
     <body>
-        
-        <div align="right">
-            
-            Benvenido Usuario@ <%= sesion.getAttribute("nombre") %> | 
-            
-            <a href="../index.jsp?cerrar=true">Cerrar Sesion</a>
-           
-            
-            <hr>
-        </div>
-            
-            <div>
-                <a  href="http://localhost:8084/lluvia//CONTROLA?accion=listar">Listar Persona</a>
-            </div>
-        <h1>Entro como administrador</h1>
+            <div id="menu">
+                <ul>
+                    <li><a href="#">Crear Empleados</a></li>
+                    <li><a href="#">Lista de Empleados</a></li>
+                    <li class="item-r"><a href="#">Contratos</a></li>
+                </ul>
+                </div>       
     </body>
 </html>
