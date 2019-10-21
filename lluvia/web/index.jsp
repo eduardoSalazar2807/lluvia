@@ -44,23 +44,23 @@
                 </form>
             </div>
         </div>
-                                       <%
+        <%
 
-                                   HttpSession sesion = request.getSession();
-                                   int nivel = 0;
-                                   if (request.getAttribute("nivel") != null) {
-                                       nivel = (Integer) request.getAttribute("nivel");
-                                       if (nivel == 1) {
-                                           sesion.setAttribute("nombre", request.getAttribute("nombre"));
-                                           sesion.setAttribute("nivel", nivel);
-                                           response.sendRedirect("Admin/admin.jsp");
-                                       }
-                                   }
+            HttpSession sesion = request.getSession();
+            int nivel = 0;
+            if (request.getAttribute("nivel") != null) {
+                nivel = (Integer) request.getAttribute("nivel");
+                if (nivel == 1) {
+                    sesion.setAttribute("nombre", request.getAttribute("nombre"));
+                    sesion.setAttribute("nivel", nivel);
+                    response.sendRedirect("Admin/admin.jsp");
+                }
+            }
 
-                                   if (request.getParameter("cerrar") != null) {
-                                       session.invalidate();
-                                   }
+            if (request.getParameter("cerrar") != null) {
+                session.invalidate();
+            }
 
-                               %>
+        %>
     </body>
 </html>
