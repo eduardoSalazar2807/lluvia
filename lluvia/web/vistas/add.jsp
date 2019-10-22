@@ -9,26 +9,25 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="../css/EstiloAdd.css">
         <title>JSP Page</title>
     </head>
     <body>
-    <center>
-        <h1>Agregar Person</h1>
-          <form action= "CONTROLA">
-            Rut:<br>
-                <input type="text" name="txtRut"><br>
-                   Nombre:<br>
-                   <input type="text" name="txtNombre"><br>
-                   Apellido:<br>
-                  <input type="text" name="txtApellido"><br>
-                  email<br>
-                  <input type="text" name="txtEmail"><br>
-                  Codigo de Empleado<br>
-                  <input type="text" name="txtCodEmpleado"><br>
-                  
-                   <input  type="submit" name="accion" value="Agregar"><br>
-
+        <form action= "CONTROLA">
+            <p>Rut:</p>
+            <input type="text" name="txtRut" class="field" required=""><br/>
+            <p>Nombre:</p>
+            <input type="text" name="txtNombre" class="field" required=""><br/>
+            <p>Apellido:</p>
+            <input type="text" name="txtApellido" class="field" required=""><br/>
+            <p>email</p>
+            <input type="text" name="txtEmail" class="field" required=""><br/>
+            <p>Codigo de Empleado</p>
+            <input type="text" name="txtCodEmpleado" class="field" required=""><br/>
+            
+            <p class="center-content">
+            <input  type="submit" name="accion" value="Agregar" class="btn btn-green"><br/>
+            </p>
         </form>
-        </center>
-    </body>
+</body>
 </html>
