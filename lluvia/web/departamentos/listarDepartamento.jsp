@@ -16,8 +16,8 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Personas</h1>
-        <a href="Controlador?accion=add"> Agregar Nuevo</a>
+        <h1>Departamentos</h1>
+        <a href="CONTROLA?accion=addDepartamento"> Crear Nuevo Deparatamento</a>
         <table border="1">
             <thead>
                 <tr>

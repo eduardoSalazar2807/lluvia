@@ -12,7 +12,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import Config.acceso;
+import Modelo.Departamento;
 import Modelo.Persona;
+import ModeloDAO.DepartamentoDAO;
 import ModeloDAO.PersonaDAO;
 import javax.servlet.RequestDispatcher;
 /**
@@ -24,7 +26,10 @@ public class CONTROLA extends HttpServlet {
     String add = "vistas/add.jsp";
     String edit = "vistas/edit.jsp";
     Persona p=new Persona();
+    Departamento d=new Departamento();
     PersonaDAO dao=new PersonaDAO();
+    DepartamentoDAO daoDe=new DepartamentoDAO();
+    
     
     //empleados dar ubicacion de los procesos
     String listarEmpleado = "empleados/listarEmpleado.jsp";
@@ -32,6 +37,7 @@ public class CONTROLA extends HttpServlet {
     
     //Departamento dar ubicacion de los procesos
      String listarDepartamento = "departamentos/listarDepartamento.jsp";
+     String addDepartamento = "departamentos/addDepartamento.jsp";
     
     
     
@@ -122,22 +128,41 @@ public class CONTROLA extends HttpServlet {
             p.setId_empleado(codigo1);
             dao.edit(p);
             acceso = listar;
-        }else if(action.equalsIgnoreCase("eliminar")){
+        } else if (action.equalsIgnoreCase("eliminar")) {
             String rut = request.getParameter("rut");
             p.setRut(rut);
             dao.eliminar(rut);
-             acceso=listar;
+            acceso = listar;
                      
                      
         }//empleados
-         else if(action.equalsIgnoreCase("MosEmpleados")){
-                acceso = listarEmpleado;  
-                 }if (action.equalsIgnoreCase("departamento")) {
+        else if (action.equalsIgnoreCase("MosEmpleados")) {
+            acceso = listarEmpleado;
+        }if (action.equalsIgnoreCase("departamento")) {
             acceso = darDepartamento;
-                 }if (action.equalsIgnoreCase("MostrarDepartamento")) {
-            acceso = listarDepartamento;
-                 }
+        }
 
+//Departamento
+        
+        if (action.equalsIgnoreCase("MostrarDepartamento")) {
+            acceso = listarDepartamento;
+        }
+        if (action.equalsIgnoreCase("addDepartamento")) {
+            acceso = addDepartamento;
+        }else if (action.equalsIgnoreCase("AgregarDer")) {
+            //int  id=Integer.parseInt(request.getParameter("txtId"));  
+            String id_departamento = request.getParameter("txtId_departamento");
+            String id_ubicacion = request.getParameter("txtUbicacion");
+            String descripcion = request.getParameter("txtDescripcion");
+            int id_der = Integer.parseInt(id_departamento);
+            int id_ubi = Integer.parseInt(id_ubicacion);
+            d.setId_departamento(id_der);
+            d.setId_ubicacion(id_ubi);
+            d.setDescripcion(descripcion);
+        
+            daoDe.add(d);
+            acceso = listarDepartamento;
+        }
   
          RequestDispatcher vista = request.getRequestDispatcher(acceso);
         vista.forward(request, response);

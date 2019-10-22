@@ -25,7 +25,7 @@ public class DepartamentoDAO implements CRUDDEPARTAMENTO{
     Connection con;
     PreparedStatement ps;
     ResultSet rs;
-    Departamento p= new Departamento();
+    Departamento d= new Departamento();
 
 
     @Override
@@ -60,7 +60,13 @@ public class DepartamentoDAO implements CRUDDEPARTAMENTO{
 
     @Override
     public boolean add(Departamento per) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String sql="insert into departamento(id_departamento,id_ubicaciones,descripcion) values ('"+per.getId_departamento()+"','"+per.getId_ubicacion()+"','"+per.getId_departamento()+"')";
+     try  {
+           con= cn.getConexion();
+           ps = con.prepareStatement(sql);
+           ps.executeUpdate();
+     }catch (Exception e){
+     }     return false;   
     }
 
     @Override
