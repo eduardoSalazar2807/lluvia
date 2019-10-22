@@ -20,7 +20,7 @@ import java.util.List;
  */
 public class PersonaDAO implements CRUD{
     
-         Conexion cn = new Conexion();
+    Conexion cn = new Conexion();
     Connection con;
     PreparedStatement ps;
     ResultSet rs;
@@ -80,7 +80,28 @@ public class PersonaDAO implements CRUD{
 
     @Override
     public boolean add(Persona per) {
+           int  gg=1;
+           String horas ="45 horas semanales";
+           String empresa="Luvia";
+           int sueldo=500000;
             String sql="insert into personas(Rut,nombre,apellido,email,Id_empleado) values ('"+per.getRut()+"','"+per.getNom()+"','"+per.getApellido()+"','"+per.getEmail()+"','"+per.getId_empleado()+"')";
+     try  {
+           con= cn.getConexion();
+           ps = con.prepareStatement(sql);
+           ps.executeUpdate();
+     }catch (Exception e){
+     }  
+     //contrato
+      sql="insert into contrato(id_empleado,Nombre_empresa,Horas_Trabajo,sueldo) values ('"+per.getId_empleado()+"','"+empresa+"','"+horas+"','"+sueldo+"')";
+     try  {
+           con= cn.getConexion();
+           ps = con.prepareStatement(sql);
+           ps.executeUpdate();
+     }catch (Exception e){
+     }
+
+   //empleado
+      sql="insert into empleado(id_empleador,id_departamento,id_cargo,email) values ('"+per.getId_empleado()+"','"+gg+"','"+gg+"','"+per.getEmail()+"')";
      try  {
            con= cn.getConexion();
            ps = con.prepareStatement(sql);

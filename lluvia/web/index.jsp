@@ -39,6 +39,9 @@
 
                     <div class="input-group">
                         <input type="submit" class="form-input" name="btniniciar" value="Iniciar Sesión">
+                          <a href="CONTROLA?accion=MosEmpleados">Empleado</a>
+                          
+                          <a href="CONTROLA?accion=MostrarDepartamento">Departamento</a>
                     </div>
 
                 </form>

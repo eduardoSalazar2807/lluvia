@@ -25,6 +25,16 @@ public class CONTROLA extends HttpServlet {
     String edit = "vistas/edit.jsp";
     Persona p=new Persona();
     PersonaDAO dao=new PersonaDAO();
+    
+    //empleados dar ubicacion de los procesos
+    String listarEmpleado = "empleados/listarEmpleado.jsp";
+    String darDepartamento = "empleados/darDepartamento.jsp";
+    
+    //Departamento dar ubicacion de los procesos
+     String listarDepartamento = "departamentos/listarDepartamento.jsp";
+    
+    
+    
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -119,7 +129,14 @@ public class CONTROLA extends HttpServlet {
              acceso=listar;
                      
                      
-        }
+        }//empleados
+         else if(action.equalsIgnoreCase("MosEmpleados")){
+                acceso = listarEmpleado;  
+                 }if (action.equalsIgnoreCase("departamento")) {
+            acceso = darDepartamento;
+                 }if (action.equalsIgnoreCase("MostrarDepartamento")) {
+            acceso = listarDepartamento;
+                 }
 
   
          RequestDispatcher vista = request.getRequestDispatcher(acceso);

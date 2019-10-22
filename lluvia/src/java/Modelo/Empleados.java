@@ -7,8 +7,53 @@ package Modelo;
 
 /**
  *
- * @author Eduardo
+ * @author Diegoandres
  */
 public class Empleados {
+     int id_empleados;
+    int id_departamento;
+    int id_cargo;
+    String email;
+    public Empleados(){
+    }
+
+    public Empleados(int id_empleados, int id_departamento, int id_cargo, String email) {
+       
+        this.id_departamento = id_departamento;
+        this.id_cargo = id_cargo;
+        this.email = email;
+    }
+
+    public int getId_empleados() {
+        return id_empleados;
+    }
+
+    public void setId_empleados(int id_empleados) {
+        this.id_empleados = id_empleados;
+    }
+
+    public int getId_departamento() {
+        return id_departamento;
+    }
+
+    public void setId_departamento(int id_departamento) {
+        this.id_departamento = id_departamento;
+    }
+
+    public int getId_cargo() {
+        return id_cargo;
+    }
+
+    public void setId_cargo(int id_cargo) {
+        this.id_cargo = id_cargo;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
     
 }
