@@ -17,16 +17,17 @@
         <title>JSP Page</title>
     </head>
     <body>
-         <h1>Personas</h1>
+         <h1>Empleados</h1>
         <a href="Controlador?accion=add"> Agregar Nuevo</a>
         <table border="1">
             <thead>
                 <tr>
-                    <th>Codigo empleado</th>
+                    <th>Codigo empleado</th  >  
                     <th>Codigo departamento</th>
                     <th>Codigo cargoo</th>
                     <th>Codigo de Email</th>
                     <th>ACCIONES</th>
+                    
                 </tr>
                 <%
                     EmpleadosDAO dao = new EmpleadosDAO();
@@ -37,19 +38,17 @@
                         per = iter.next();
                 %>
           <tr>
-              <td><%= per.getId_empleados()%></td>
+                    <td><%= per.getId_empleados()%></td>
                     <td><%= per.getId_departamento()%></td>
                     <td><%= per.getId_cargo()%></td>
                     <td><%= per.getEmail()%></td>
                     
                  <th>
-                     <a href="CONTROLA?accion=departamento">Departamentos</a>
-                      
-                 
-                     
-                     
+                     <a href="CONTROLA?accion=addDepartamento&id=<%= per.getId_empleados()%>">Asignar departamento</a>
                     
+                       
                  </th>
+
           </tr>
           <% 
                     }%>

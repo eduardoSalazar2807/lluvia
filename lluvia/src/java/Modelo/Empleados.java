@@ -14,14 +14,25 @@ public class Empleados {
     int id_departamento;
     int id_cargo;
     String email;
+    int cod;
     public Empleados(){
     }
 
-    public Empleados(int id_empleados, int id_departamento, int id_cargo, String email) {
+    public Empleados(int id_empleados, int id_departamento, int id_cargo, String email,int cod) {
        
         this.id_departamento = id_departamento;
         this.id_cargo = id_cargo;
         this.email = email;
+        this.cod = cod;
+        
+    }
+
+    public int getCod() {
+        return cod;
+    }
+
+    public void setCod(int cod) {
+        this.cod = cod;
     }
 
     public int getId_empleados() {

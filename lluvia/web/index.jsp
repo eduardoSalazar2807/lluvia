@@ -42,6 +42,7 @@
                           <a href="CONTROLA?accion=MosEmpleados">Empleado</a>
                           
                           <a href="CONTROLA?accion=MostrarDepartamento">Departamento</a>
+                           <a href="CONTROLA?accion=Contratos">Contratos</a>
                     </div>
 
                 </form>

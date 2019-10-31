@@ -13,8 +13,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import Config.acceso;
 import Modelo.Departamento;
+import Modelo.Empleados;
 import Modelo.Persona;
 import ModeloDAO.DepartamentoDAO;
+import ModeloDAO.EmpleadosDAO;
 import ModeloDAO.PersonaDAO;
 import javax.servlet.RequestDispatcher;
 /**
@@ -27,9 +29,11 @@ public class CONTROLA extends HttpServlet {
     String edit = "vistas/edit.jsp";
     Persona p=new Persona();
     Departamento d=new Departamento();
+    Empleados e=new Empleados();
     PersonaDAO dao=new PersonaDAO();
     DepartamentoDAO daoDe=new DepartamentoDAO();
-    
+    EmpleadosDAO daoEm=new EmpleadosDAO();
+    int id_empleador;
     
     //empleados dar ubicacion de los procesos
     String listarEmpleado = "empleados/listarEmpleado.jsp";
@@ -38,7 +42,8 @@ public class CONTROLA extends HttpServlet {
     //Departamento dar ubicacion de los procesos
      String listarDepartamento = "departamentos/listarDepartamento.jsp";
      String addDepartamento = "departamentos/addDepartamento.jsp";
-    
+     // Contratos ubicacion de los procesos
+    String listarContratos = "contratos/listarContrato.jsp";
     
     
     /**
@@ -148,21 +153,34 @@ public class CONTROLA extends HttpServlet {
             acceso = listarDepartamento;
         }
         if (action.equalsIgnoreCase("addDepartamento")) {
+          
+            
             acceso = addDepartamento;
         }else if (action.equalsIgnoreCase("AgregarDer")) {
             //int  id=Integer.parseInt(request.getParameter("txtId"));  
-            String id_departamento = request.getParameter("txtId_departamento");
+           // String id_departamento = request.getParameter("txtId_departamento");
             String id_ubicacion = request.getParameter("txtUbicacion");
             String descripcion = request.getParameter("txtDescripcion");
-            int id_der = Integer.parseInt(id_departamento);
+            //int id_der = Integer.parseInt(id_departamento);
             int id_ubi = Integer.parseInt(id_ubicacion);
-            d.setId_departamento(id_der);
+            //d.setId_departamento(id_der);
             d.setId_ubicacion(id_ubi);
             d.setDescripcion(descripcion);
         
             daoDe.add(d);
             acceso = listarDepartamento;
-        }
+        } else if (action.equalsIgnoreCase("EliminarDepar")) {
+           
+             int  id_departaemnto=Integer.parseInt(request.getParameter("idD"));  
+           d.setId_departamento(id_departaemnto);
+            daoDe.eliminar(id_departaemnto);
+            acceso = listarDepartamento;
+           
+        }//contrtos
+         else if (action.equalsIgnoreCase("Contratos")) {
+         acceso = listarContratos;
+         }
+        
   
          RequestDispatcher vista = request.getRequestDispatcher(acceso);
         vista.forward(request, response);

@@ -52,10 +52,6 @@
                         <a class="boton" href="CONTROLA?accion=editar&rut=<%= per.getRut()%>">Editar</a>
                         <a class="boton" href="CONTROLA?accion=eliminar&rut=<%= per.getRut()%>">Eliminar</a>
 
-                        <a class="boton" href="Controlador?accion=AcignarDepar&rut=<%= per.getRut()%>">Departamento </a>
-
-
-
                     </th>
                 </tr>
                 <%

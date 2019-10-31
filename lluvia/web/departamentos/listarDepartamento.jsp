@@ -41,7 +41,8 @@
                     <td><%= per.getDescripcion()%></td>
                     
                  <th>
-                     <a href="CONTROLA?accion=departamento">Departamentos</a>
+                     <a  href="CONTROLA?accion=EliminarDepar&idD=<%= per.getId_departamento()%>">eliminal</a>
+                    
                       
                  
                      
@@ -61,5 +62,10 @@
                 </tr>
             </tbody>
         </table>
+          
+            
+            
+            
+            
     </body>
 </html>
