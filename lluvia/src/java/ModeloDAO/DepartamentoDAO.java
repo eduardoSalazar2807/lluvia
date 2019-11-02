@@ -11,8 +11,10 @@ import interfaces.CRUDDEPARTAMENTO;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+
 
 
 /**
@@ -60,7 +62,15 @@ public class DepartamentoDAO implements CRUDDEPARTAMENTO{
 
     @Override
     public boolean add(Departamento per) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String sql = "insert into departamento(id_ubicaciones,descripcion) values ('" + per.getId_ubicacion() + "','" + per.getDescripcion() + "')";
+        try {
+            con = cn.getConexion();
+            ps = con.prepareStatement(sql);
+            ps.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
+        return false;
     }
 
     @Override

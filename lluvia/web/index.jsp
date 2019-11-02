@@ -28,7 +28,7 @@
                     </div>
 
                     <div class="input-group">
-                        <input type="number" class="form-input" name="txtusuario" id="correo" required="">
+                        <input type="text" class="form-input" name="txtusuario" id="correo" required="">
                         <label  for="correo">Ingrese Rut</label>
                     </div>
 
@@ -39,10 +39,10 @@
 
                     <div class="input-group">
                         <input type="submit" class="form-input" name="btniniciar" value="Iniciar Sesión">
-                          <a href="CONTROLA?accion=MosEmpleados">Empleado</a>
-                          
-                          <a href="CONTROLA?accion=MostrarDepartamento">Departamento</a>
+                                                   
                     </div>
+                    
+                    
 
                 </form>
             </div>

@@ -30,7 +30,7 @@ public class acceso {
         
         try {
             con= db.getConexion();
-            sql="SELECT nivel FROM cuenta WHERE Rut='"+usuario+"' AND contraseña='"+contraseña+"'";
+            sql="SELECT id_departamento FROM cuenta WHERE Rut='"+usuario+"' AND contraseña='"+contraseña+"'";
             ps=con.prepareStatement(sql);
             rs=ps.executeQuery();
             

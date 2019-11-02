@@ -17,7 +17,7 @@
     </head>
     <body>
         <h1>Personas</h1>
-        <a href="Controlador?accion=add"> Agregar Nuevo</a>
+        <a href="http://localhost:8084/lluvia//CONTROLA?accion=addepartamento"> Agregar Nuevo</a>
         <table border="1">
             <thead>
                 <tr>
@@ -41,7 +41,7 @@
                     <td><%= per.getDescripcion()%></td>
                     
                  <th>
-                     <a href="CONTROLA?accion=departamento">Departamentos</a>
+                     <a href="http://localhost:8084/lluvia//CONTROLA?accion=departamento">Departamentos</a>
                       
                  
                      

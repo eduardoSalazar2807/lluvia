@@ -36,6 +36,8 @@
             <ul>
                 <li> <a href="http://localhost:8084/lluvia//CONTROLA?accion=add"> Agregar Empleado</a></li>
                 <li> <a  href="http://localhost:8084/lluvia//CONTROLA?accion=listar">Listar Persona</a></li>
+                <li><a href="http://localhost:8084/lluvia//CONTROLA?accion=MosEmpleados">Empleado</a></li>
+                <li><a href="http://localhost:8084/lluvia//CONTROLA?accion=MostrarDepartamento">Departamento</a></li>
                 <li class="item-r"><a href="../index.jsp?cerrar=true">Cerrar Sesion</a></li>
             </ul>
         </div>       

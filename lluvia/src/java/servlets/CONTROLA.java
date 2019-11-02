@@ -12,7 +12,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import Config.acceso;
+import Modelo.Departamento;
 import Modelo.Persona;
+import ModeloDAO.DepartamentoDAO;
 import ModeloDAO.PersonaDAO;
 import javax.servlet.RequestDispatcher;
 /**
@@ -24,6 +26,8 @@ public class CONTROLA extends HttpServlet {
     String add = "vistas/add.jsp";
     String edit = "vistas/edit.jsp";
     Persona p=new Persona();
+    Departamento a=new Departamento();
+    DepartamentoDAO dep=new DepartamentoDAO();
     PersonaDAO dao=new PersonaDAO();
     
     //empleados dar ubicacion de los procesos
@@ -32,7 +36,7 @@ public class CONTROLA extends HttpServlet {
     
     //Departamento dar ubicacion de los procesos
      String listarDepartamento = "departamentos/listarDepartamento.jsp";
-    
+     String addepartamento = "departamentos/addepartamento.jsp";
     
     
     /**
@@ -132,11 +136,20 @@ public class CONTROLA extends HttpServlet {
         }//empleados
          else if(action.equalsIgnoreCase("MosEmpleados")){
                 acceso = listarEmpleado;  
-                 }if (action.equalsIgnoreCase("departamento")) {
-            acceso = darDepartamento;
+                 }if (action.equalsIgnoreCase("addepartamento")) {
+            acceso = addepartamento;
                  }if (action.equalsIgnoreCase("MostrarDepartamento")) {
             acceso = listarDepartamento;
-                 }
+                 }else
+    if (action.equalsIgnoreCase("Agregardep")) {
+                   String ubicacion = request.getParameter("txtubicacion");
+            String descripcion = request.getParameter("txtdescripcion");
+            int ubica1 = Integer.parseInt(ubicacion);
+            a.setId_ubicacion(ubica1);
+            a.setDescripcion(descripcion);
+            dep.add(a);
+            acceso = listarDepartamento;
+        }
 
   
          RequestDispatcher vista = request.getRequestDispatcher(acceso);
