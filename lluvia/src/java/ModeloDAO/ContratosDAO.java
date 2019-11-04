@@ -6,35 +6,29 @@
 package ModeloDAO;
 
 import Config.Conexion;
-import Modelo.Departamento;
-import interfaces.CRUDDEPARTAMENTO;
+import Modelo.Contratos;
+import interfaces.CRUDCONTRATOS;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-
-
 
 /**
  *
  * @author Diegoandres
  */
-public class DepartamentoDAO implements CRUDDEPARTAMENTO{
-    
-    Conexion cn = new Conexion();
+public class ContratosDAO implements CRUDCONTRATOS{
+ Conexion cn = new Conexion();
     Connection con;
     PreparedStatement ps;
     ResultSet rs;
-    Departamento p= new Departamento();
-
-
+    Contratos p= new Contratos();
     @Override
-    public List listarDepartamento() {
-        ArrayList<Departamento> list = new ArrayList<>();
+    public List listarContratos() {
+          ArrayList<Contratos> list = new ArrayList<>();
         
-        String sql="Select * from departamento";
+        String sql="Select * from contrato";
         
         try {
             con = cn.getConexion();
@@ -42,44 +36,37 @@ public class DepartamentoDAO implements CRUDDEPARTAMENTO{
             rs = ps.executeQuery();
             
             while(rs.next()){
-                Departamento per = new Departamento();
-                per.setId_departamento(rs.getInt("id_departamento"));
-                per.setId_ubicacion(rs.getInt("id_ubicaciones"));
-                per.setDescripcion(rs.getString("descripcion"));
-            
+                Contratos per = new Contratos();
+                per.setId_contratos(rs.getInt("id_contrato"));
+                per.setId_empleado(rs.getInt("id_empleado"));
+                per.setNombre_empresa(rs.getString("Nombre_empresa"));
+                per.setHoras_trabajadas(rs.getString("Horas_Trabajo"));
+                per.setSueldo(rs.getInt("sueldo"));
                 list.add(per);            
             }
             
         } catch (Exception e) {
             System.out.println(e);
         }
-        return list; }
+        return list;  }
 
     @Override
-    public Departamento list(int id_departamento) {
+    public Contratos list(int id_contrato) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public boolean add(Departamento per) {
-        String sql = "insert into departamento(id_ubicaciones,descripcion) values ('" + per.getId_ubicacion() + "','" + per.getDescripcion() + "')";
-        try {
-            con = cn.getConexion();
-            ps = con.prepareStatement(sql);
-            ps.executeUpdate();
-        } catch (SQLException e) {
-            System.out.println(e);
-        }
-        return false;
-    }
-
-    @Override
-    public boolean edit(Departamento per) {
+    public boolean add(Contratos per) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public boolean eliminar(int id_departamento) {
+    public boolean edit(Contratos per) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean eliminar(int id_contrato) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
