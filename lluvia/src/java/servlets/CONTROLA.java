@@ -15,7 +15,7 @@ import Config.acceso;
 import Modelo.Departamento;
 import Modelo.Empleados;
 import Modelo.Persona;
-
+import ModeloDAO.DepartamentoDAO;
 import ModeloDAO.EmpleadosDAO;
 import ModeloDAO.PersonaDAO;
 import javax.servlet.RequestDispatcher;
@@ -31,7 +31,7 @@ public class CONTROLA extends HttpServlet {
     Departamento d=new Departamento();
     Empleados e=new Empleados();
     PersonaDAO dao=new PersonaDAO();
-    //DepartamentoDAO daoDe=new DepartamentoDAO();
+    DepartamentoDAO daoDe=new DepartamentoDAO();
     EmpleadosDAO daoEm=new EmpleadosDAO();
     int id_empleador;
     
