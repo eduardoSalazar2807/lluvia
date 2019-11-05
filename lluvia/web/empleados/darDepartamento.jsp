@@ -13,12 +13,13 @@
     </head>
     <body>
                         <%
-                    EmpleadosDAO dao = new EmpleadosDAO();
+                    /* EmpleadosDAO dao = new EmpleadosDAO();
                     List<Empleados> list = dao.listarEmpleado();
                     Iterator<Empleados> iter = list.iterator();
                     Empleados per = null; 
                     while(iter.hasNext()){
                         per = iter.next();
+*/
                 %>
           <tr>
               <td><%= per.getId_empleados()%></td>

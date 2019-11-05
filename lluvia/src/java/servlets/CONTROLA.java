@@ -15,7 +15,7 @@ import Config.acceso;
 import Modelo.Departamento;
 import Modelo.Empleados;
 import Modelo.Persona;
-import ModeloDAO.DepartamentoDAO;
+
 import ModeloDAO.EmpleadosDAO;
 import ModeloDAO.PersonaDAO;
 import javax.servlet.RequestDispatcher;
@@ -31,7 +31,7 @@ public class CONTROLA extends HttpServlet {
     Departamento d=new Departamento();
     Empleados e=new Empleados();
     PersonaDAO dao=new PersonaDAO();
-    DepartamentoDAO daoDe=new DepartamentoDAO();
+    //DepartamentoDAO daoDe=new DepartamentoDAO();
     EmpleadosDAO daoEm=new EmpleadosDAO();
     int id_empleador;
     
@@ -143,20 +143,8 @@ public class CONTROLA extends HttpServlet {
         }//empleados
 
          else if(action.equalsIgnoreCase("MosEmpleados")){
-                acceso = listarEmpleado;  
-                 }if (action.equalsIgnoreCase("addepartamento")) {
-            acceso = addepartamento;
-                 }if (action.equalsIgnoreCase("MostrarDepartamento")) {
-            acceso = listarDepartamento;
-                 }else
-    if (action.equalsIgnoreCase("Agregardep")) {
-                   String ubicacion = request.getParameter("txtubicacion");
-            String descripcion = request.getParameter("txtdescripcion");
-            int ubica1 = Integer.parseInt(ubicacion);
-            a.setId_ubicacion(ubica1);
-            a.setDescripcion(descripcion);
-            dep.add(a);
-            acceso = listarDepartamento;
+                acceso = listarEmpleado;
+         }
 
         else if (action.equalsIgnoreCase("MosEmpleados")) {
             acceso = listarEmpleado;
