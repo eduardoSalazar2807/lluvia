@@ -3,29 +3,41 @@ body{
     padding:  150px;
     font-family: Arial;
 }
-#menu{
 
-    background-color: #000;
-    border-radius: 25px;
-}
-#menu ul{
+ul, ol{
     list-style: none;
-    margin: 0;
-    padding: 0;
 }
-#menu ul li{
-    display: inline-block;
+.nav > li {
+    float: left;
 }
-#menu ul li a{
-    color: white;
-    display: block;
-    padding: 20px 20px;
-    text-decoration: none;
+.contenedor{
+    align-content: center;
+    border-radius: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
-#menu ul li a:hover{
-    background-color: #42B881;
-    border-radius: 25px;
+.nav li ul li {
+    position:relative;
 }
-.item-r{
-    float: right;
+
+.nav li a:hover {
+   background-color:#8AB7E7;
+}
+
+.nav li:hover > ul {
+   display:block;
+}
+
+.nav li ul {
+    display:none;
+    position:absolute;
+    min-width:140px; 
+}
+
+.nav li a {
+   background-color:#6FA4DA;
+   color:black;
+   text-decoration:none;
+   padding:10px 30px;
+   display:block; 
 }

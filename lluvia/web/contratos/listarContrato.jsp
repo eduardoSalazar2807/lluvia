@@ -13,14 +13,15 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="../css/Estiloslistar.css">
         <title>JSP Page</title>
     </head>
     <body>
      <h1>contratos</h1>
-        <a href="Controlador?accion=add"> Agregar Nuevo</a>
-        <table border="1">
+        <a href="CONTROLA?accion=add"> Agregar Nuevo</a>
+        <table id="tabla_datos" border="1">
             <thead>
-                <tr>
+                <tr id="thead_bor" height="40px">
                     <th>Codigo Contrato</th  >  
                     <th>Codigo Empleado</th>
                     <th>Nombre Empresa</th>
@@ -38,11 +39,11 @@
                         per = iter.next();
                 %>
           <tr>
-                    <td><%= per.getId_contratos()%></td>
-                    <td><%= per.getId_empleado()%></td>
-                    <td><%= per.getNombre_empresa()%></td>
-                    <td><%= per.getHoras_trabajadas()%></td>
-                    <td><%= per.getSueldo()%></td>
+                    <td class="td_contenido" width="15%"><%= per.getId_contratos()%></td>
+                    <td class="td_contenido" width="15%"><%= per.getId_empleado()%></td>
+                    <td class="td_contenido" width="15%"><%= per.getNombre_empresa()%></td>
+                    <td class="td_contenido" width="15%"><%= per.getHoras_trabajadas()%></td>
+                    <td class="td_contenido" width="15%"><%= per.getSueldo()%></td>
                     
                  
 

@@ -9,19 +9,18 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <link rel="stylesheet" href="../css/EstiloAdd.css">
+        <title>Agregar Departamento</title>
     </head>
     <body>
         <form action= "CONTROLA">
-            <p>Codigo Departamento:</p>
-            <input type="text" name="txtId_departamento" ><br/>
             <p>Codigo Ubicaccion</p>
-            <input type="text" name="txtUbicacion"><br/>
+            <input type="text" name="txtUbicacion" class="field" required=""><br/>
             <p>Descripcion:</p>
-            <input type="text" name="txtDescripcion" ><br/>
+            <input type="text" name="txtDescripcion" class="field" required="" ><br/>
     
             <p class="center-content">
-            <input  type="submit" name="accion" value="AgregarDer"><br/>
+            <input  type="submit" name="accion" value="AgregarDer" class="btn btn-green"><br/>
             </p>
         </form>
     </body>

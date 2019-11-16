@@ -32,13 +32,46 @@
     </head>
     <body>
                     Benvenido Usuario@ <%= sesion.getAttribute("nombre") %> 
-        <div id="menu">
-            <ul>
-                <li> <a href="http://localhost:8084/lluvia//CONTROLA?accion=add"> Agregar Empleado</a></li>
-                <li> <a  href="http://localhost:8084/lluvia//CONTROLA?accion=listar">Listar Persona</a></li>
-                <li><a href="http://localhost:8084/lluvia//CONTROLA?accion=MosEmpleados">Empleado</a></li>
-                <li><a href="http://localhost:8084/lluvia//CONTROLA?accion=MostrarDepartamento">Departamento</a></li>
-                <li class="item-r"><a href="../index.jsp?cerrar=true">Cerrar Sesion</a></li>
+        <div class="contenedor" align="center">
+            <ul class="nav">
+                <li><a>Trabajadores</a>
+                    <ul>
+                        <li> <a href="http://localhost:8084/lluvia//CONTROLA?accion=add"> Agregar Trabajador</a></li>
+                        <li> <a  href="http://localhost:8084/lluvia//CONTROLA?accion=listar">Mostrar Trabajador</a></li>		
+                    </ul>
+                </li>
+            </ul>
+            <ul class="nav">
+                <li><a>empleado</a>
+                    <ul>
+                        <li><a href="http://localhost:8084/lluvia//CONTROLA?accion=MosEmpleados">Empleado</a></li>		
+                    </ul>
+                </li>
+            </ul>
+            <ul class="nav">
+                <li><a>Departamento</a>
+                    <ul>
+                        <li><a class="boton" href="http://localhost:8084/lluvia//CONTROLA?accion=addDepartamento">Agregar Departamento</a></li>
+                        <li><a href="http://localhost:8084/lluvia//CONTROLA?accion=MostrarDepartamento">Mostrar Departamento</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="nav">
+                <li><a>Cargo</a>
+                    <ul>
+                        <li><a href="http://localhost:8084/lluvia//CONTROLA?accion=Cargo">Mostrar Cargo</a></li>
+
+                    </ul>
+                </li>
+            </ul>
+            <ul class="nav">
+                <li><a>Contratos</a>
+                    <ul>
+                        <li><a href="http://localhost:8084/lluvia//CONTROLA?accion=Contratos">Mostrar Contratos</a></li>
+                        
+                    </ul>
+                </li>
+                <li><a href="../index.jsp?cerrar=true">Cerrar Sesion</a></li>
             </ul>
         </div>       
     </body>

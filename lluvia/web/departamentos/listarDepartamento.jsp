@@ -13,6 +13,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="../css/Estiloslistar.css">
         <title>JSP Page</title>
     </head>
     <body>
@@ -20,8 +21,7 @@
         
         <font face="San Francisco" size="3">
         <font face="San Francisco" size="3">
-        <label id="titulo"><b>Lista de Empleados</b></label>
-        <a class="boton" href="CONTROLA?accion=addDepartamento">Agregar Departamento</a>
+        <label id="titulo"><b>Lista de Departamentos</b></label>
         </font>
         <table id="tabla_datos" border="1">
             <thead> 

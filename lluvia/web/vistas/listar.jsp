@@ -21,7 +21,7 @@
         
         <font face="San Francisco" size="3">
         <font face="San Francisco" size="3">
-        <label id="titulo"><b>Lista de Empleados</b></label>
+        <label id="titulo"><b>Lista de Trabajadores</b></label>
         </font>
         <table id="tabla_datos" border="1">
             <thead> 

@@ -4,6 +4,8 @@
     Author     : Diegoandres
 --%>
 
+<%@page import="java.sql.ResultSet"%>
+<%@page import="ModeloDAO.DepartamentoDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -13,6 +15,12 @@
         <title>Agregar</title>
     </head>
     <body>
+        
+        <jsp:useBean id="cn" class="ModeloDAO.DepartamentoDAO" scope="page"></jsp:useBean>
+        <%
+            ResultSet rs = cn.mostrardepartamento();
+            ResultSet ps = cn.mostrarcargo();
+        %>
         <form action= "CONTROLA">
             <p>Rut:</p>
             <input type="text" name="txtRut" class="field" required=""><br/>
@@ -24,9 +32,30 @@
             <input type="text" name="txtEmail" class="field" required=""><br/>
             <p>Codigo de Empleado</p>
             <input type="text" name="txtCodEmpleado" class="field" required=""><br/>
-            
+            <p>Departamento</p>
+            <select name="txtArea" class="combos">
+                <option>Seleccione Departamento</option>
+                <%
+                    while (rs.next()) {
+                %>
+                <option type="text" value="<%=rs.getInt("id_departamento")%>"><%=rs.getString("descripcion")%></option>
+                <% }
+                    rs.close();
+                %>
+            </select>
+            <p>Cargo</p>
+            <select name="txtcargo" class="combos">
+                <option>Seleccione Cargo</option>
+                <%
+                    while (ps.next()) {
+                %>
+                <option type="text" value="<%=ps.getInt("id_cargo")%>"><%=ps.getString("nombre_cargo")%></option>
+                <% }
+                    ps.close();
+                %>
+            </select>
             <p class="center-content">
-            <input  type="submit" name="accion" value="Agregar" class="btn btn-green"><br/>
+                <input  type="submit" name="accion" value="Agregar" class="btn btn-green"><br/>
             </p>
         </form>
 </body>

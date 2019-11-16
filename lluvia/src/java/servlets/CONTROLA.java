@@ -182,7 +182,7 @@ public class CONTROLA extends HttpServlet {
             daoDe.eliminar(id_departaemnto);
             acceso = listarDepartamento;
            
-        }//contrtos
+        }//contratos
          else if (action.equalsIgnoreCase("Contratos")) {
          acceso = listarContratos;
          }

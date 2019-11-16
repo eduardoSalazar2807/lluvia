@@ -11,6 +11,7 @@ import interfaces.CRUDDEPARTAMENTO;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -52,6 +53,31 @@ public class DepartamentoDAO implements CRUDDEPARTAMENTO{
 
     }
 
+    public ResultSet mostrardepartamento(){
+        String sql ="select id_departamento,descripcion from departamento";
+        try {
+            con = cn.getConexion();
+            ps = con.prepareStatement(sql);
+            rs = ps.executeQuery();
+            
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
+        return rs;
+    }
+            
+        public ResultSet mostrarcargo(){
+        String sql ="select id_cargo,nombre_cargo from cargo";
+        try {
+            con = cn.getConexion();
+            ps = con.prepareStatement(sql);
+            rs = ps.executeQuery();
+            
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
+        return rs;
+    }
     @Override
     public Departamento list(int id_departamento) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
