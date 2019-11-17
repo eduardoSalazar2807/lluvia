@@ -12,9 +12,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import Config.acceso;
+import Modelo.Cargo;
 import Modelo.Departamento;
 import Modelo.Empleados;
 import Modelo.Persona;
+import ModeloDAO.CargoDAO;
 import ModeloDAO.DepartamentoDAO;
 import ModeloDAO.EmpleadosDAO;
 import ModeloDAO.PersonaDAO;
@@ -24,26 +26,35 @@ import javax.servlet.RequestDispatcher;
  * @author Eduardo
  */
 public class CONTROLA extends HttpServlet {
-    String  listar = "vistas/listar.jsp";
+    //persona Ubicaciones
+    Persona p = new Persona();
+    PersonaDAO dao = new PersonaDAO();
+    String listar = "vistas/listar.jsp";
     String add = "vistas/add.jsp";
     String edit = "vistas/edit.jsp";
-    Persona p=new Persona();
-    Departamento d=new Departamento();
-    Empleados e=new Empleados();
-    PersonaDAO dao=new PersonaDAO();
-    DepartamentoDAO daoDe=new DepartamentoDAO();
-    EmpleadosDAO daoEm=new EmpleadosDAO();
-    int id_empleador;
-    
+
     //empleados dar ubicacion de los procesos
+    Empleados e = new Empleados();
+    EmpleadosDAO daoEm = new EmpleadosDAO();
+    int id_empleador;
     String listarEmpleado = "empleados/listarEmpleado.jsp";
     String darDepartamento = "empleados/darDepartamento.jsp";
-    
-    //Departamento dar ubicacion de los procesos
-     String listarDepartamento = "departamentos/listarDepartamento.jsp";
-     String addDepartamento = "departamentos/addDepartamento.jsp";
-     // Contratos ubicacion de los procesos
+
+    //Departamento dar ubicacion de los procesos 
+    Departamento d = new Departamento();
+    DepartamentoDAO daoDe = new DepartamentoDAO();
+    String listarDepartamento = "departamentos/listarDepartamento.jsp";
+
+    String addDepartamento = "departamentos/addDepartamento.jsp";
+    // Contratos ubicacion de los procesos
+
     String listarContratos = "contratos/listarContrato.jsp";
+
+    //Cargos Dar ubicacion 
+     Cargo c = new Cargo();
+     CargoDAO DAOCAR = new CargoDAO();
+    String listarCargo = "cargos/listarCargo.jsp";
+    String addCargo = "cargos/addCargo.jsp";
     
     
     /**
@@ -106,6 +117,8 @@ public class CONTROLA extends HttpServlet {
             String apellido = request.getParameter("txtApellido");
             String email = request.getParameter("txtEmail");
             String codigo = request.getParameter("txtCodEmpleado");
+            String depar= request.getParameter("txtArea");
+            String car= request.getParameter("txtcargo");
             int codigo1 = Integer.parseInt(codigo);
             p.setRut(rut);
             p.setNom(nom);
@@ -186,6 +199,32 @@ public class CONTROLA extends HttpServlet {
          else if (action.equalsIgnoreCase("Contratos")) {
          acceso = listarContratos;
          }
+         // Cargos
+        
+         else if (action.equalsIgnoreCase("listarCargo")) {
+         acceso = listarCargo;
+         } else if (action.equalsIgnoreCase("addCargo")) {
+            acceso = addCargo;
+
+        } else if (action.equalsIgnoreCase("AgregarCargo")) {
+            //int  id=Integer.parseInt(request.getParameter("txtId"));  
+            String id = request.getParameter("txtIdcargo");
+            String nom = request.getParameter("txtNombre");
+         
+            int codigo1 = Integer.parseInt(id);
+            c.setId_Cargo(codigo1);
+            c.setDescripcion(nom);
+            DAOCAR.add(c);
+            acceso = listarCargo;
+        }else if (action.equalsIgnoreCase("eliminarCargo")) {
+            String id = request.getParameter("id");
+            int id_cargo = Integer.parseInt(id);
+            c.setId_Cargo(id_cargo);
+            DAOCAR.eliminar(id_cargo);
+            acceso = listarCargo;
+                     
+                     
+        }
         
   
          RequestDispatcher vista = request.getRequestDispatcher(acceso);

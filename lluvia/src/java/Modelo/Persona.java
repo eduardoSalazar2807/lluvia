@@ -15,14 +15,36 @@ public class Persona {
    String apellido;
     String email;
     int id_empleado;
+    int departamento;
+    int cargo;
+    
+    
      public Persona(){
     }
 
-    public Persona(String rut, String nom, String apellido, String email, int id_empleado) {
+    public Persona(String rut, String nom, String apellido, String email, int id_empleado, int departamento,int cargo ) {
         this.nom = nom;
         this.apellido = apellido;
         this.email = email;
         this.id_empleado = id_empleado;
+         this.departamento = departamento;
+          this.cargo = cargo;
+    }
+
+    public int getDepartamento() {
+        return departamento;
+    }
+
+    public void setDepartamento(int departamento) {
+        this.departamento = departamento;
+    }
+
+    public int getCargo() {
+        return cargo;
+    }
+
+    public void setCargo(int cargo) {
+        this.cargo = cargo;
     }
 
     public String getRut() {

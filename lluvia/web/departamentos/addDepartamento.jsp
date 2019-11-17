@@ -20,7 +20,7 @@
             <input type="text" name="txtDescripcion" class="field" required="" ><br/>
     
             <p class="center-content">
-            <input  type="submit" name="accion" value="AgregarDer" class="btn btn-green"><br/>
+            <input  type="submit" name="accion" value="AgregarCargo" class="btn btn-green"><br/>
             </p>
         </form>
     </body>

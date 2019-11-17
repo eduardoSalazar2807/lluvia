@@ -33,6 +33,7 @@
             <p>Codigo de Empleado</p>
             <input type="text" name="txtCodEmpleado" class="field" required=""><br/>
             <p>Departamento</p>
+            //
             <select name="txtArea" class="combos">
                 <option>Seleccione Departamento</option>
                 <%
@@ -49,7 +50,7 @@
                 <%
                     while (ps.next()) {
                 %>
-                <option type="text" value="<%=ps.getInt("id_cargo")%>"><%=ps.getString("nombre_cargo")%></option>
+                <option type="text" value="<%=ps.getInt("id_cargo")%>"><%=ps.getString("descripcion ")%></option>
                 <% }
                     ps.close();
                 %>

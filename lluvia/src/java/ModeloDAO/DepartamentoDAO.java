@@ -67,7 +67,7 @@ public class DepartamentoDAO implements CRUDDEPARTAMENTO{
     }
             
         public ResultSet mostrarcargo(){
-        String sql ="select id_cargo,nombre_cargo from cargo";
+        String sql ="select id_cargo,descripcion from cargo";
         try {
             con = cn.getConexion();
             ps = con.prepareStatement(sql);

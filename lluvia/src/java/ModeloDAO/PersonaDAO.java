@@ -82,7 +82,7 @@ public class PersonaDAO implements CRUD{
     public boolean add(Persona per) {
            int  gg=1;
            String horas ="45 horas semanales";
-           String empresa="Luvia";
+           String empresa="Lluvia";
            int sueldo=500000;
             String sql="insert into personas(Rut,nombre,apellido,email,Id_empleado) values ('"+per.getRut()+"','"+per.getNom()+"','"+per.getApellido()+"','"+per.getEmail()+"','"+per.getId_empleado()+"')";
      try  {
@@ -92,7 +92,7 @@ public class PersonaDAO implements CRUD{
      }catch (Exception e){
      }  
      //contrato
-      sql="insert into contrato(id_empleado,Nombre_empresa,Horas_Trabajo,sueldo) values ('"+per.getId_empleado()+"','"+empresa+"','"+horas+"','"+sueldo+"')";
+     sql="insert into contrato(id_empleado,Nombre_empresa,departamento,cargo,Horas_Trabajo,sueldo) values ('"+per.getId_empleado()+"','"+empresa+"','"+per.getDepartamento()+"','"+per.getCargo()+"','"+horas+"','"+sueldo+"')";
      try  {
            con= cn.getConexion();
            ps = con.prepareStatement(sql);
