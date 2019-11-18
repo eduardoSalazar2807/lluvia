@@ -120,11 +120,17 @@ public class CONTROLA extends HttpServlet {
             String depar= request.getParameter("txtArea");
             String car= request.getParameter("txtcargo");
             int codigo1 = Integer.parseInt(codigo);
+            int departamento = Integer.parseInt(depar);
+            int cargo = Integer.parseInt(car);
+            System.out.println(cargo);
+            System.out.println(departamento);
             p.setRut(rut);
             p.setNom(nom);
             p.setApellido(apellido);
             p.setEmail(email);
             p.setId_empleado(codigo1);
+            p.setDepartamento(departamento);
+            p.setCargo(cargo);
             dao.add(p);
             acceso = listar;
         } else if (action.equalsIgnoreCase("editar")) {

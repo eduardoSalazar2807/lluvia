@@ -101,7 +101,7 @@ public class PersonaDAO implements CRUD{
      }
 
    //empleado
-      sql="insert into empleado(id_empleador,id_departamento,id_cargo,email) values ('"+per.getId_empleado()+"','"+gg+"','"+gg+"','"+per.getEmail()+"')";
+      sql="insert into empleado(id_empleador,id_departamento,id_cargo,email) values ('"+per.getId_empleado()+"','"+per.getDepartamento()+"','"+per.getCargo()+"','"+per.getEmail()+"')";
      try  {
            con= cn.getConexion();
            ps = con.prepareStatement(sql);
