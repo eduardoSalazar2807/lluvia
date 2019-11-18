@@ -15,15 +15,35 @@ public class Contratos {
     String nombre_empresa;
     String horas_trabajadas;
     int sueldo;
+     int departamento;
+    int cargo;
     public Contratos(){
     }
 
-    public Contratos(int id_contratos, int id_empleado, String nombre_empresa, String horas_trabajadas, int sueldo) {
+    public Contratos(int id_contratos, int id_empleado, String nombre_empresa, String horas_trabajadas, int sueldo,int departamento,int cargo ) {
         this.id_contratos = id_contratos;
         this.id_empleado = id_empleado;
         this.nombre_empresa = nombre_empresa;
         this.horas_trabajadas = horas_trabajadas;
         this.sueldo = sueldo;
+        this.departamento = departamento;
+        this.cargo = cargo;
+    }
+
+    public int getDepartamento() {
+        return departamento;
+    }
+
+    public void setDepartamento(int departamento) {
+        this.departamento = departamento;
+    }
+
+    public int getCargo() {
+        return cargo;
+    }
+
+    public void setCargo(int cargo) {
+        this.cargo = cargo;
     }
 
     public int getId_contratos() {

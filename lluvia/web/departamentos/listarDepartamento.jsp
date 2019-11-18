@@ -46,7 +46,7 @@
 
                     <th>
                         
-                        <a class="boton" href="CONTROLA?accion=EliminarDepar&idD=<%= per.getId_departamento()%>">Eliminar</a>
+                        <a class="boton" href="CONTROLA?accion=EliminarDepar&id=<%= per.getId_departamento()%>">Eliminar</a>
 
                     </th>
                 </tr>

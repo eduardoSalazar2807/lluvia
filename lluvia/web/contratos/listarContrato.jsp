@@ -22,9 +22,11 @@
         <table id="tabla_datos" border="1">
             <thead>
                 <tr id="thead_bor" height="40px">
-                    <th>Codigo Contrato</th  >  
-                    <th>Codigo Empleado</th>
-                    <th>Nombre Empresa</th>
+                     <th>Codigo Contrato</th>
+                    <th>Codigo Empleado</th>  
+                    <th>Nombre empresa</th>
+                    <th>Departamento</th>
+                    <th>Contrato</th>
                     <th>Horas Trabajadas</th>
                     <th>Sueldo</th>
                     
@@ -42,6 +44,8 @@
                     <td class="td_contenido" width="15%"><%= per.getId_contratos()%></td>
                     <td class="td_contenido" width="15%"><%= per.getId_empleado()%></td>
                     <td class="td_contenido" width="15%"><%= per.getNombre_empresa()%></td>
+                    <td class="td_contenido" width="15%"><%= per.getDepartamento()%></td>
+                    <td class="td_contenido" width="15%"><%= per.getCargo()%></td>
                     <td class="td_contenido" width="15%"><%= per.getHoras_trabajadas()%></td>
                     <td class="td_contenido" width="15%"><%= per.getSueldo()%></td>
                     

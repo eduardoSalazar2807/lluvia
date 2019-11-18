@@ -1,3 +1,4 @@
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -40,6 +41,8 @@ public class ContratosDAO implements CRUDCONTRATOS{
                 per.setId_contratos(rs.getInt("id_contrato"));
                 per.setId_empleado(rs.getInt("id_empleado"));
                 per.setNombre_empresa(rs.getString("Nombre_empresa"));
+                per.setDepartamento(rs.getInt("departamento"));
+                per.setCargo(rs.getInt("cargo"));
                 per.setHoras_trabajadas(rs.getString("Horas_Trabajo"));
                 per.setSueldo(rs.getInt("sueldo"));
                 list.add(per);            
