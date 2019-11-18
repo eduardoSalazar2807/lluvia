@@ -14,6 +14,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="../css/Estiloslistar.css">
         <title>JSP Page</title>
     </head>
     <body>
@@ -21,9 +22,9 @@
          <h1>Personas</h1>
         <a href="CONTROLA?accion=add"> Agregar Nuevo</a>
 
-        <table border="1">
+        <table id="tabla_datos" border="1">
             <thead>
-                <tr>
+                <tr id="thead_bor" height="40px">
                     <th>Codigo empleado</th  >  
                     <th>Codigo departamento</th>
                     <th>Codigo cargoo</th>
@@ -40,13 +41,13 @@
                         per = iter.next();
                 %>
           <tr>
-                    <td><%= per.getId_empleados()%></td>
-                    <td><%= per.getId_departamento()%></td>
-                    <td><%= per.getId_cargo()%></td>
-                    <td><%= per.getEmail()%></td>
+                    <td class="td_contenido" width="15%"><%= per.getId_empleados()%></td>
+                    <td class="td_contenido" width="15%"><%= per.getId_departamento()%></td>
+                    <td class="td_contenido" width="15%"><%= per.getId_cargo()%></td>
+                    <td class="td_contenido" width="15%"><%= per.getEmail()%></td>
                     
                  <th>
-                     <a href="CONTROLA?accion=addDepartamento&id=<%= per.getId_empleados()%>">Asignar departamento</a>
+                     <a class="boton" href="CONTROLA?accion=addDepartamento&id=<%= per.getId_empleados()%>">Asignar departamento</a>
                     
                        
                  </th>
@@ -55,14 +56,6 @@
           <% 
                     }%>
             </thead>
-            <tbody>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </tbody>
         </table>
     </body>
 </html>

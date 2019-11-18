@@ -50,7 +50,7 @@
                 <%
                     while (ps.next()) {
                 %>
-                <option type="text" value="<%=ps.getInt("id_cargo")%>"><%=ps.getString("descripcion ")%></option>
+                <option type="text" value="<%=ps.getInt("id_cargo")%>"><%=ps.getString("descripcion")%></option>
                 <% }
                     ps.close();
                 %>

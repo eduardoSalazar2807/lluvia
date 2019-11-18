@@ -59,7 +59,9 @@
             <ul class="nav">
                 <li><a>Cargo</a>
                     <ul>
-                        <li><a href="http://localhost:8084/lluvia//CONTROLA?accion=Cargo">Mostrar Cargo</a></li>
+                        
+                        <li><a href="http://localhost:8084/lluvia//CONTROLA?accion=addCargo">Agregar cargo</a></li>
+                        <li><a href="http://localhost:8084/lluvia//CONTROLA?accion=listarCargo">Mostrar Cargo</a></li>
 
                     </ul>
                 </li>

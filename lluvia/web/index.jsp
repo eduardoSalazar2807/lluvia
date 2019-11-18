@@ -39,11 +39,6 @@
 
                     <div class="input-group">
                         <input type="submit" class="form-input" name="btniniciar" value="Iniciar Sesión">
-                        <div>
-                            <a  href="CONTROLA?accion=listarCargo">Listar cargo</a>
-                        </div>
-                            <a href="CONTROLA?accion=addCargo">Nuevo Cargo</a>
-
                     </div>
                   
                 </form>

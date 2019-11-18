@@ -1,5 +1,7 @@
+@charset "utf-8";
+
 body{
-    background-color: #4642B8;
+    background-color: #0E203A;
     padding:  150px;
     font-family: Arial;
 }
@@ -26,18 +28,27 @@ ul, ol{
 
 .nav li:hover > ul {
    display:block;
+
 }
 
 .nav li ul {
     display:none;
     position:absolute;
-    min-width:140px; 
+	min-width:140px;
 }
 
 .nav li a {
-   background-color:#6FA4DA;
+   background-color:#0AA54E;
    color:black;
    text-decoration:none;
    padding:10px 30px;
    display:block; 
+	border-radius: 30px;
 }
+
+@font-face {
+  font-family: "San Francisco";
+  color: black color;
+  font-weight: 400;
+  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
+ }
